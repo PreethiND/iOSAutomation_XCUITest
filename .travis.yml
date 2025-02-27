@@ -1,0 +1,11 @@
+language: swift
+osx_image: xcode15.4
+branches:
+ only:
+  - main
+
+before_install:
+ - gen install fastlane --no-ri --no-rdoc --no-document
+install: true
+script:
+ - fastlane scan --scheme TAU -- device "iPhone 15"
